@@ -17,8 +17,8 @@ menu: English Docs
 | ellipsisChar            | String    | ...      | Text content of ellipsis.                                                                 |
 | ellipsisNode            | ReactNode |          | Custom the ellipsis node.                                                                 |
 | endExcludes             | String[]  | []       | The characters that want to remove at the end(Before ellipsis char).                      |
-| reflowOnResize          | Boolean   |          | Whether update when container resize. Default true if native ellipsis supported or false. |
-| reflowThresholdOnResize | Number    | 60       | The threshold of reflow throttle on resize, unit is millisecond.                          |
+| reflowOnResize          | Boolean   |          | Whether update when container resize. Default true if native ellipsis supported or false. (Default use window.requestAnimationFrame) |
+| reflowThresholdOnResize | Number    |          | The threshold of reflow throttle on resize, unit is millisecond. (You can reduce the resize frequency by setting `reflowThresholdOnResize`) |
 
 ## Events
 

@@ -6,7 +6,7 @@ import { JsEllipsisProps } from '../../type';
 import classNames from '../../utils/classNames';
 import { getMaxHeight } from '../../utils/compute';
 import { frameThrottle, throttle } from '../../utils/throttle';
-import { isSupportRequestAnimationFrame } from '../../utils/is';
+import { isSupportRequestAnimationFrame, isEffective } from '../../utils/is';
 
 import './index.css';
 
@@ -90,8 +90,10 @@ function JsEllipsis(props: JsEllipsisProps) {
   useEffect(() => {
     let observer: ResizeObserver;
     if (ref.current && reflowOnResize) {
-      const throttleFn = isSupportRequestAnimationFrame
-        ? frameThrottle(truncate)
+      const throttleFn = !isEffective(reflowThresholdOnResize)
+        ? isSupportRequestAnimationFrame
+          ? frameThrottle(truncate)
+          : throttle(truncate, reflowThresholdOnResize)
         : throttle(truncate, reflowThresholdOnResize);
       // For performance, throttle the truncate frequency
       observer = new ResizeObserver(throttleFn);

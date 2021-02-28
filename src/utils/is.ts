@@ -8,5 +8,10 @@ export const isSupportNativeEllipsis =
 export const isExistentAndEqualTo = (value: any, target: any) => {
   return value && value === target;
 };
+/** Whether the environment support window.requestAnimationFrame. */
 export const isSupportRequestAnimationFrame: boolean =
   window && window.requestAnimationFrame !== undefined;
+
+/** Whether the variable effective. */
+export const isEffective = (variable: any): boolean =>
+  variable !== undefined && variable !== null;
