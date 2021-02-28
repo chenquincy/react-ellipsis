@@ -1,0 +1,16 @@
+.demo-title {
+  width: 60px;
+  text-align: center;
+  padding: 5px 12px;
+  color: #999;
+  background-color: rgb(246, 248, 250);
+  border-radius: 4px 4px 0 0;
+}
+.demo-container {
+  width: 600px;
+  resize: horizontal;
+  overflow: hidden;
+  padding: 10px 12px;
+  border-radius: 0 4px 4px 4px;
+  background-color: rgb(246, 248, 250);
+}

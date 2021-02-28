@@ -1,0 +1,39 @@
+---
+name: 介绍
+route: /zh/
+menu: 中文文档
+---
+
+import Ellipsis from '../Ellipsis.jsx';
+
+# React-ellipsis-component
+
+高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。
+
+![npm](https://img.shields.io/npm/v/react-ellipsis-component.svg) ![下载数量](https://img.shields.io/npm/dt/react-ellipsis-component.svg) ![语言](https://img.shields.io/badge/language-typescript-yellow.svg)
+
+> 提示：在文档中，为了方便展示，可用鼠标拖动容器右下角调整宽度，实际组件不带调整宽度功能。
+
+<Ellipsis
+  text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
+  maxLine={1}
+  ellipsisChar="...查看更多"
+  endExcludes={['、', '。']}
+  reflowOnResize={true}
+  onReflow={(ellipsis, text) => {
+    console.info(' => ', ellipsis, text);
+  }}
+/>
+
+```tsx
+<Ellipsis
+  text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
+  maxLine={1}
+  ellipsisChar="...查看更多"
+  endExcludes={['、', '。']}
+  reflowOnResize={true}
+  onReflow={(ellipsis, text) => {
+    console.info(' => ', ellipsis, text);
+  }}
+/>
+```

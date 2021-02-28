@@ -1,0 +1,46 @@
+# main.yml
+name: publish and update docs
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - uses: srt32/git-actions@v0.0.3
+        with:
+          args: git submodule update --init --recursive
+      - name: use Node.js 12.16.2
+        uses: actions/setup-node@master
+        with:
+          node-version: 12.16.2
+      - name: npm install & build
+        run: |
+          npm install
+          npm run build
+        env:
+          CI: true
+      - name: publish to npm
+        uses: pascalgn/npm-publish-action@1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: update docs
+        run: |
+          cd docs
+          npm install
+          npm run build
+          cd ../
+        env:
+          CI: true
+      - name: deploy docs
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
+          ARGS: '-avz --delete --exclude *.js.map'
+          SOURCE: 'docs/.docz/public/'
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.DOCS_TARGET }}

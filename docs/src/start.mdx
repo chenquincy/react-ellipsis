@@ -1,0 +1,84 @@
+---
+name: Getting Started
+route: /start
+menu: English Docs
+---
+
+import Ellipsis from './Ellipsis.jsx';
+
+# Getting Started
+
+## Normal Ellipsis
+
+<Ellipsis
+  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+  maxLine={1}
+/>
+
+```tsx
+<Ellipsis
+  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+  maxLine={1}
+/>
+```
+
+Normal ellipsis base on css property `-webkit-line-clamp`, best performance and support flexible ellipsis natively.
+
+## Custom Ellipsis Char
+
+<Ellipsis
+  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+  maxLine={1}
+  ellipsisChar=" ...Read More"
+/>
+
+```tsx
+// Use javascript to simulate ellipsis when use more feature. Default without flexible ellipsis, should open by yourself.
+<Ellipsis
+  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+  maxLine={1}
+  ellipsisChar=" ...Read More"
+/>
+```
+
+## Flexible Ellipsis
+
+Normal Ellipsis support flexible ellipsis default. Should open by yourself when use more feature if the browser support `ResizeObserver`.
+
+<Ellipsis
+  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+  maxLine={1}
+  ellipsisChar=" ...Read More"
+  reflowOnResize={true}
+/>
+
+```tsx
+<Ellipsis
+  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+  maxLine={1}
+  ellipsisChar=" ...Read More"
+  reflowOnResize={true}
+/>
+```
+
+## Filter End Char
+
+<Ellipsis
+  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+  maxLine={1}
+  ellipsisChar=" ...Read More"
+  endExcludes={[' ', ',', '.']}
+  reflowOnResize={true}
+/>
+
+```tsx
+<Ellipsis
+  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+  maxLine={1}
+  ellipsisChar=" ...Read More"
+  endExcludes={[' ', ',', '.']}
+  reflowOnResize={true}
+/>
+```
+
+You can refer to [API Docs](/api) for more features.

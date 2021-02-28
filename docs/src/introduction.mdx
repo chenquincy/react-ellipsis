@@ -1,0 +1,39 @@
+---
+name: Introduction
+route: /
+menu: English Docs
+---
+
+import Ellipsis from './Ellipsis.jsx';
+
+# React-ellipsis-component
+
+A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc.
+
+![npm](https://img.shields.io/npm/v/react-ellipsis-component.svg) ![Download](https://img.shields.io/npm/dt/react-ellipsis-component.svg) ![lang](https://img.shields.io/badge/language-typescript-yellow.svg)
+
+> Reminder: Demo container can be resize by dragging in docs.
+
+<Ellipsis
+  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+  maxLine={1}
+  ellipsisChar="...Read More"
+  endExcludes={[' ', ',', '.']}
+  reflowOnResize={true}
+  onReflow={(ellipsis, text) => {
+    console.info(' => ', ellipsis, text);
+  }}
+/>
+
+```tsx
+<Ellipsis
+  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+  maxLine={1}
+  ellipsisChar="...Read More"
+  endExcludes={[' ', ',', '.']}
+  reflowOnResize={true}
+  onReflow={(ellipsis, text) => {
+    console.info(' => ', ellipsis, text);
+  }}
+/>
+```
