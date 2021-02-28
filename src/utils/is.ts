@@ -8,3 +8,5 @@ export const isSupportNativeEllipsis =
 export const isExistentAndEqualTo = (value: any, target: any) => {
   return value && value === target;
 };
+export const isSupportRequestAnimationFrame: boolean =
+  window && window.requestAnimationFrame !== undefined;

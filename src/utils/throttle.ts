@@ -1,4 +1,23 @@
-export default function(fn: Function, threshold = 60) {
+// a throttle function using window.requestAnimationFrame
+export function frameThrottle(fn: Function) {
+  let lock = false;
+  return function() {
+    // @ts-ignore
+    const context = this;
+    const args = arguments;
+    if (lock) {
+      return;
+    }
+    lock = true;
+    fn.apply(context, args);
+    window.requestAnimationFrame(() => {
+      lock = false;
+    });
+  };
+}
+
+// normal throttle function
+export function throttle(fn: Function, threshold = 60) {
   let last: number;
   let timer: NodeJS.Timeout;
 
