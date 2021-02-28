@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface NativeEllipsisProps {
   /** Whether ellipsis content, default true. */
   ellipsis: boolean;
@@ -19,7 +21,7 @@ export interface JsEllipsisProps {
    * Customize the ellipsis style with html.
    * (Warning: make sure the html is safe).
    **/
-  dangerousEllipsisHtml?: string;
+  ellipsisNode?: ReactNode;
   /** The chars that will be removed before ellipsis. */
   endExcludes?: string[];
   /** Whether update when container resize, default false. */
@@ -28,6 +30,8 @@ export interface JsEllipsisProps {
   reflowThresholdOnResize?: number;
   /** Text reflow callback, only supported with js ellipsis. */
   onReflow?: (ellipsis: boolean, text: string) => void;
+  /** Ellipsis click callback. */
+  onEllipsisClick?: () => void;
 }
 export interface EllipsisProps extends JsEllipsisProps {
   /** Custom className of component. */

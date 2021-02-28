@@ -15,11 +15,12 @@ function JsEllipsis(props: JsEllipsisProps) {
     maxLine = 1,
     maxHeight,
     ellipsisChar,
-    dangerousEllipsisHtml,
+    ellipsisNode,
     endExcludes = [],
     reflowOnResize,
     reflowThresholdOnResize,
     onReflow,
+    onEllipsisClick,
   } = props;
 
   const truncating = useRef(false);
@@ -82,7 +83,7 @@ function JsEllipsis(props: JsEllipsisProps) {
   // Call truncate function to reflow when the main props change.
   useEffect(() => {
     truncate();
-  }, [text, maxLine, maxHeight, ellipsisChar, dangerousEllipsisHtml, endExcludes]);
+  }, [text, maxLine, maxHeight, ellipsisChar, ellipsisNode, endExcludes]);
 
   // Observe resize event of container if reflowOnResize is true.
   useEffect(() => {
@@ -102,23 +103,31 @@ function JsEllipsis(props: JsEllipsisProps) {
     };
   }, []);
 
+  // callback of ellipsis click event
+  function handleEllipsisClick() {
+    if (onEllipsisClick && typeof onEllipsisClick === 'function') {
+      onEllipsisClick();
+    }
+  }
+
   return (
     <div ref={ref} className="__react-ellipsis-js">
       <span ref={textRef} className="__react-ellipsis-js-text"></span>
-      {dangerousEllipsisHtml ? (
+      {ellipsisNode ? (
         <span
           className={classNames('__react-ellipsis-js-ellipsis', {
             hidden: !showEllipsis,
           })}
-          dangerouslySetInnerHTML={{
-            __html: dangerousEllipsisHtml,
-          }}
-        ></span>
+          onClick={handleEllipsisClick}
+        >
+          {ellipsisNode}
+        </span>
       ) : (
         <span
           className={classNames('__react-ellipsis-js-ellipsis', {
             hidden: !showEllipsis,
           })}
+          onClick={handleEllipsisClick}
         >
           {ellipsisChar}
         </span>

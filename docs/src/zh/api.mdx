@@ -8,20 +8,21 @@ menu: 中文文档
 
 ## 属性
 
-| 属性名                  | 类型       | 默认值   | 描述                                                 |
-| ----------------------- | ---------- | -------- | ---------------------------------------------------- |
-| text                    | String     | Required | 需要缩略的纯文本                                     |
-| maxLine                 | Number     | 1        | 最大的可见行数                                       |
-| className               | String     |          | 自定义类名                                           |
-| ellipsis                | Boolean    | true     | 是否开启缩略                                         |
-| ellipsisChar            | String     | ...      | 自定义缩略符文本                                     |
-| dangerousEllipsisHtml   | HTMLString |          | 自定义缩略符 html（注意：请确保 html 内容安全可靠）  |
-| endExcludes             | String[]   | []       | 结尾处希望被过滤掉的字符（在缩略符之前）             |
-| reflowOnResize          | Boolean    |          | 容器大小改变时是否重新布局（使用常规缩略时无需设置） |
-| reflowThresholdOnResize | Number     | 60       | 容器大小改变时重新编排的时间间隔，单位毫秒           |
+| 属性名                  | 类型      | 默认值   | 描述                                                 |
+| ----------------------- | --------- | -------- | ---------------------------------------------------- |
+| text                    | String    | Required | 需要缩略的纯文本                                     |
+| maxLine                 | Number    | 1        | 最大的可见行数                                       |
+| className               | String    |          | 自定义类名                                           |
+| ellipsis                | Boolean   | true     | 是否开启缩略                                         |
+| ellipsisChar            | String    | ...      | 自定义缩略符文本                                     |
+| ellipsisNode            | ReactNode |          | 自定义缩略符节点                                     |
+| endExcludes             | String[]  | []       | 结尾处希望被过滤掉的字符（在缩略符之前）             |
+| reflowOnResize          | Boolean   |          | 容器大小改变时是否重新布局（使用常规缩略时无需设置） |
+| reflowThresholdOnResize | Number    | 60       | 容器大小改变时重新编排的时间间隔，单位毫秒           |
 
 ## 事件
 
-| 事件名   | 类型                                      | 描述                                                                                         |
-| -------- | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
-| onReflow | (ellipsis: Boolean, text: String) => void | 重排完成回调事件。参数 `ellipsis` 表示文本是否被截断；参数 `text` 为可见文本（不包含缩略符） |
+| 事件名          | 类型                                      | 描述                                                                                         |
+| --------------- | ----------------------------------------- | -------------------------------------------------------------------------------------------- |
+| onReflow        | (ellipsis: Boolean, text: String) => void | 重排完成回调事件。参数 `ellipsis` 表示文本是否被截断；参数 `text` 为可见文本（不包含缩略符） |
+| onEllipsisClick | () => void                                | 缩略符点击回调事件                                                                           |

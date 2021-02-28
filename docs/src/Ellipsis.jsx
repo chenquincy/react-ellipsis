@@ -1,12 +1,11 @@
 import React from 'react';
 
-import Ellipsis from '../../src';
+import Ellipsis from 'react-ellipsis-component';
 import './ellipsis.css';
 
 function EllipsisDemo(props) {
   return (
     <div className="demo">
-      <div className="demo-title">demo</div>
       <div className="demo-container">
         <Ellipsis {...props} />
       </div>

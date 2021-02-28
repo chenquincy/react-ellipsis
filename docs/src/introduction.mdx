@@ -4,6 +4,7 @@ route: /
 menu: English Docs
 ---
 
+import { Playground } from 'docz';
 import Ellipsis from './Ellipsis.jsx';
 
 # React-ellipsis-component
@@ -14,26 +15,18 @@ A high performance and customized ellipsis component for react. Support to custo
 
 > Reminder: Demo container can be resize by dragging in docs.
 
-<Ellipsis
-  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
-  maxLine={1}
-  ellipsisChar="...Read More"
-  endExcludes={[' ', ',', '.']}
-  reflowOnResize={true}
-  onReflow={(ellipsis, text) => {
-    console.info(' => ', ellipsis, text);
-  }}
-/>
-
-```tsx
-<Ellipsis
-  text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
-  maxLine={1}
-  ellipsisChar="...Read More"
-  endExcludes={[' ', ',', '.']}
-  reflowOnResize={true}
-  onReflow={(ellipsis, text) => {
-    console.info(' => ', ellipsis, text);
-  }}
-/>
-```
+<Playground>
+  <Ellipsis
+    text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+    maxLine={1}
+    ellipsisChar="...Read More"
+    endExcludes={[' ', ',', '.']}
+    reflowOnResize={true}
+    onReflow={(ellipsis, text) => {
+      console.info(' => ', ellipsis, text);
+    }}
+    onEllipsisClick={() => {
+      console.info('click ellipsis');
+    }}
+  />
+</Playground>

@@ -4626,7 +4626,7 @@ docz-utils@^2.3.0:
     unist-util-is "^3.0.0"
     unist-util-visit "^1.4.1"
 
-docz@latest:
+docz@^2.3.1:
   version "2.3.1"
   resolved "https://registry.npmjs.org/docz/-/docz-2.3.1.tgz#931cd840e2f9a25691fb7c67fa48d4a6ef1476a3"
   integrity sha512-HlbLqpizhieqvjD6xxNr6Nj8sk00vnHbLh4wHabXUpOi8ZkILBDSLmnfGzozAgmT+HN18CbszYMXCOlbcr4MXQ==
@@ -10890,6 +10890,11 @@ react-docgen@^4.1.1:
     doctrine "^3.0.0"
     node-dir "^0.1.10"
     recast "^0.17.3"
+
+react-ellipsis-component@latest:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/react-ellipsis-component/-/react-ellipsis-component-0.2.0.tgz#5ebad25fd27f7931dba50b83f4c0442691b6ced0"
+  integrity sha512-O2FsOQyzlxjg6lbOCam3OkPTqH6ohnf7RXSIUY01wx5Pftmzy4qTkHAacM375FD4TXP5P+K6/9IU2CsgU4uPcw==
 
 react-error-overlay@^3.0.0:
   version "3.0.0"

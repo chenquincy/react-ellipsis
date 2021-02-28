@@ -8,7 +8,7 @@
     "dist",
     "src"
   ],
-  "version": "0.1.0",
+  "version": "0.5.0",
   "license": "MIT",
   "engines": {
     "node": ">=10"
@@ -53,7 +53,6 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/resize-observer-browser": "^0.1.5",
-    "docz": "^2.3.1",
     "husky": "^4.3.8",
     "less": "^4.1.1",
     "postcss": "^8.2.6",

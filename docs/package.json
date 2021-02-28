@@ -8,8 +8,9 @@
     "serve": "docz serve"
   },
   "dependencies": {
-    "docz": "latest",
-    "prop-types": "^15.7.2"
+    "docz": "^2.3.1",
+    "prop-types": "^15.7.2",
+    "react-ellipsis-component": "latest"
   },
   "peerDependencies": {
     "react": ">=16",

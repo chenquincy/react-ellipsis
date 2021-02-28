@@ -1,5 +1,5 @@
 # main.yml
-name: publish
+name: update docs
 on:
   workflow_dispatch:
 
@@ -16,13 +16,20 @@ jobs:
         uses: actions/setup-node@master
         with:
           node-version: 12.16.2
-      - name: npm install & build
+      - name: update docs
         run: |
+          npm install
+          cd docs
           npm install
           npm run build
         env:
           CI: true
-      - name: publish to npm
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: deploy docs
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.ACCESS_TOKEN }}
+          ARGS: '-avz --delete --exclude *.js.map'
+          SOURCE: 'docs/.docz/public/'
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.DOCS_TARGET }}

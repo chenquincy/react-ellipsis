@@ -8,20 +8,21 @@ menu: English Docs
 
 ## Props
 
-| Prop Name               | Type       | Default  | Description                                                                               |
-| ----------------------- | ---------- | -------- | ----------------------------------------------------------------------------------------- |
-| text                    | String     | Required | Pure text that you want to ellipsis. Support \n to wrap with useJsEllipsis={true}.        |
-| maxLine                 | Number     | 1        | Max count of visible lines.                                                               |
-| className               | String     |          | Add className to component.                                                               |
-| ellipsis                | Boolean    | true     | Whether to ellipsis the text content.                                                     |
-| ellipsisChar            | String     | ...      | Text content of ellipsis.                                                                 |
-| dangerousEllipsisHtml   | HTMLString |          | Customize the ellipsis style with html. (**Warning: make sure the html is safe**).        |
-| endExcludes             | String[]   | []       | The characters that want to remove at the end(Before ellipsis char).                      |
-| reflowOnResize          | Boolean    |          | Whether update when container resize. Default true if native ellipsis supported or false. |
-| reflowThresholdOnResize | Number     | 60       | The threshold of reflow throttle on resize, unit is millisecond.                          |
+| Prop Name               | Type      | Default  | Description                                                                               |
+| ----------------------- | --------- | -------- | ----------------------------------------------------------------------------------------- |
+| text                    | String    | Required | Pure text that you want to ellipsis. Support \n to wrap with useJsEllipsis={true}.        |
+| maxLine                 | Number    | 1        | Max count of visible lines.                                                               |
+| className               | String    |          | Add className to component.                                                               |
+| ellipsis                | Boolean   | true     | Whether to ellipsis the text content.                                                     |
+| ellipsisChar            | String    | ...      | Text content of ellipsis.                                                                 |
+| ellipsisNode            | ReactNode |          | Custom the ellipsis node.                                                                 |
+| endExcludes             | String[]  | []       | The characters that want to remove at the end(Before ellipsis char).                      |
+| reflowOnResize          | Boolean   |          | Whether update when container resize. Default true if native ellipsis supported or false. |
+| reflowThresholdOnResize | Number    | 60       | The threshold of reflow throttle on resize, unit is millisecond.                          |
 
 ## Events
 
-| Event Name | Type                                      | Description                                                                                                                                     |
-| ---------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| onReflow   | (ellipsis: Boolean, text: String) => void | Reflow callback, `ellipsis` is whether the text have been truncated. `text` is the visible content after truncating(Not include ellipsis char). |
+| Event Name      | Type                                      | Description                                                                                                                                     |
+| --------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| onReflow        | (ellipsis: Boolean, text: String) => void | Reflow callback, `ellipsis` is whether the text have been truncated. `text` is the visible content after truncating(Not include ellipsis char). |
+| onEllipsisClick | () => void                                | Ellipsis click callback.                                                                                                                        |

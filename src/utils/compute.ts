@@ -8,8 +8,8 @@ function computeStyle(element: HTMLElement, prop: string) {
   if (!window.getComputedStyle) {
     (window as any).getComputedStyle = function(el: any) {
       this.getPropertyValue = function(key: string) {
-        const regex = /(\-([a-z]){1})/g;
-        if (key == 'float') key = 'styleFloat';
+        const regex = /(-([a-z]){1})/g;
+        if (key === 'float') key = 'styleFloat';
         if (regex.test(key)) {
           key = key.replace(regex, function() {
             return arguments[2].toUpperCase();

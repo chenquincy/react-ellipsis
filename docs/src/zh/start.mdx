@@ -4,6 +4,7 @@ route: /zh/start
 menu: 中文文档
 ---
 
+import { Playground } from 'docz';
 import Ellipsis from '../Ellipsis.jsx';
 
 # 使用
@@ -16,76 +17,63 @@ import Ellipsis from 'react-ellipsis-component';
 
 ## 常规缩略
 
-<Ellipsis
-  text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾字符过滤、缩略回调等功能。"
-  maxLine={1}
-/>
-
-```tsx
-<Ellipsis
-  text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
-  maxLine={1}
-/>
-```
+<Playground>
+  <Ellipsis
+    text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾字符过滤、缩略回调等功能。"
+    maxLine={1}
+  />
+</Playground>
 
 常规缩略时使用 css 属性 `-webkit-line-clamp` 实现，性能最优且原生支持自适应缩略。
 
 ## 自定义缩略符
 
-<Ellipsis
-  text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
-  maxLine={1}
-  ellipsisChar=" ...查看更多"
-/>
+<Playground>
+  <Ellipsis
+    text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
+    maxLine={1}
+    ellipsisChar=" ...查看更多"
+  />
+</Playground>
 
-```tsx
-// 非常规缩略时，组件通过 javascript 模拟实现，默认不带自适应缩略，需自行开启。
-<Ellipsis
-  text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
-  maxLine={1}
-  ellipsisChar=" ...查看更多"
-/>
-```
+## 自定义缩略节点
+
+<Playground>
+  <Ellipsis
+    text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
+    maxLine={1}
+    ellipsisNode={<a href="/#自定义缩略节点">...查看更多</a>}
+  />
+</Playground>
 
 ## 自适应缩略
 
 常规缩略默认支持自适应缩略，非常规缩略时，若当前环境支持 ResizeObserver ，可自行开启自适应缩略。
 
-<Ellipsis
-  text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
-  maxLine={1}
-  ellipsisChar=" ...查看更多"
-  reflowOnResize={true}
-  reflowThresholdOnResize={40}
-/>
+> 为什么不监听 window 的 resize 事件？它的兼容性更好。
+>
+> 因为监听 window 的 resize 事件很耗性能。
 
-```tsx
-<Ellipsis
-  text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
-  maxLine={1}
-  ellipsisChar=" ...查看更多"
-  reflowOnResize={true}
-/>
-```
+<Playground>
+  <Ellipsis
+    text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
+    maxLine={1}
+    ellipsisChar=" ...查看更多"
+    reflowOnResize={true}
+    reflowThresholdOnResize={40}
+  />
+</Playground>
 
 ## 尾字符过滤
 
-<Ellipsis
-  text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
-  maxLine={1}
-  ellipsisChar=" ...查看更多"
-  endExcludes={['、', '。']}
-  reflowOnResize={true}
-/>
-
-```tsx
-<Ellipsis
-  text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
-  maxLine={1}
-  ellipsisChar=" ...查看更多"
-  endExcludes={['、', '。']}
-  reflowOnResize={true}
-/>
-```
+<Playground>
+  <Ellipsis
+    text="高性能、可自定义的 react 文本缩略组件。支持自定义缩略符、html 自定义缩略符、尾文本过滤、缩略回调等功能。"
+    maxLine={1}
+    ellipsisChar=" ...查看更多"
+    endExcludes={['、', '。']}
+    reflowOnResize={true}
+  />
+</Playground>
 
 查看 [API 文档](/zh/api) 了解更多功能
