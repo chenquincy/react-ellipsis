@@ -91,12 +91,12 @@ function JsEllipsis(props: JsEllipsisProps) {
     let observer: ResizeObserver;
     if (ref.current && reflowOnResize) {
       let throttleFn;
-      // When the environment support window.requestAnimationFrame
-      // and the prop reflowThresholdOnResize is effective, we use
-      // window.requestAnimationFrame to reduce resize frequency.
       if (!isEffective(reflowThresholdOnResize) && isSupportRequestAnimationFrame) {
+        // Resize by using window.requestAnimationFrame
+        // if it supported and "reflowThresholdOnResize" isn't effective.
         throttleFn = frameThrottle(truncate);
       } else {
+        // Or using setTimeout with throttle.
         throttleFn = throttle(truncate, reflowThresholdOnResize);
       }
       // For performance, throttle the truncate frequency
