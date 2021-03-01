@@ -2,13 +2,13 @@
 export function frameThrottle(fn: Function) {
   let lock = false;
   return function() {
-    // @ts-ignore
-    const context = this;
-    const args = arguments;
     if (lock) {
       return;
     }
     lock = true;
+    // @ts-ignore
+    const context = this;
+    const args = arguments;
     window.requestAnimationFrame(() => {
       fn.apply(context, args);
       lock = false;
