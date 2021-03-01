@@ -9,17 +9,13 @@ A high performance and customized ellipsis component for react. Support to custo
 - [English Docs](http://react-ellipsis.quincychen.cn/)
 - [中文文档](http://react-ellipsis.quincychen.cn/zh/)
 
-
-
 ## Demo
 
-![demo](https://static.quincychen.cn/20210228114839.png)
-
-
+![demo](https://static.quincychen.cn/demo.gif)
 
 ## Buy Me A Coffee
 
-Open source is not easy, you can  buy me a coffee. *Note your name or github id so I can add you to the donation list.*
+Open source is not easy, you can buy me a coffee. _Note your name or github id so I can add you to the donation list._
 
 <table style="margin-left: auto; margin-right: auto;">
 	<tr>
@@ -34,15 +30,10 @@ Open source is not easy, you can  buy me a coffee. *Note your name or github id 
 	</tr>
 </table>
 
-
-##  License
+## License
 
 MIT
 
-
-
 ## Resources
 
-* [Changelog](https://github.com/chenquincy/react-ellipsis-component/blob/master/CHANGELOG.md)
-
-
+- [Changelog](https://github.com/chenquincy/react-ellipsis-component/blob/master/CHANGELOG.md)
