@@ -8,7 +8,7 @@
     "dist",
     "src"
   ],
-  "version": "0.5.1",
+  "version": "0.5.2",
   "license": "MIT",
   "engines": {
     "node": ">=10"

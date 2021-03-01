@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.2](https://github.com/chenquincy/react-ellipsis/compare/v0.5.1...v0.5.2) (2021-03-01)
+
+
+### Bug Fixes
+
+* undefined judge error on ssr env ([54e986b](https://github.com/chenquincy/react-ellipsis/commit/54e986beb003541ef80e92b5e6b8dbf18e02342f))
+
 ### 0.5.1 (2021-03-01)
 
 
