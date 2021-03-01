@@ -9,8 +9,8 @@ export function frameThrottle(fn: Function) {
       return;
     }
     lock = true;
-    fn.apply(context, args);
     window.requestAnimationFrame(() => {
+      fn.apply(context, args);
       lock = false;
     });
   };
