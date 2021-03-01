@@ -8,17 +8,17 @@ menu: English Docs
 
 ## Props
 
-| Prop Name               | Type      | Default  | Description                                                                               |
-| ----------------------- | --------- | -------- | ----------------------------------------------------------------------------------------- |
-| text                    | String    | Required | Pure text that you want to ellipsis. Support \n to wrap with useJsEllipsis={true}.        |
-| maxLine                 | Number    | 1        | Max count of visible lines.                                                               |
-| className               | String    |          | Add className to component.                                                               |
-| ellipsis                | Boolean   | true     | Whether to ellipsis the text content.                                                     |
-| ellipsisChar            | String    | ...      | Text content of ellipsis.                                                                 |
-| ellipsisNode            | ReactNode |          | Custom the ellipsis node.                                                                 |
-| endExcludes             | String[]  | []       | The characters that want to remove at the end(Before ellipsis char).                      |
-| reflowOnResize          | Boolean   |          | Whether update when container resize. Default true if native ellipsis supported or false. (Default use window.requestAnimationFrame) |
-| reflowThresholdOnResize | Number    |          | The threshold of reflow throttle on resize, unit is millisecond. (You can reduce the resize frequency by setting `reflowThresholdOnResize`) |
+| Prop Name               | Type      | Default  | Description                                                                                                                                |
+| ----------------------- | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| text                    | String    | Required | Pure text that you want to ellipsis. Support \n to wrap with useJsEllipsis={true}.                                                         |
+| maxLine                 | Number    | 1        | Max count of visible lines.                                                                                                                |
+| className               | String    |          | Add className to component.                                                                                                                |
+| ellipsis                | Boolean   | true     | Whether to ellipsis the text content.                                                                                                      |
+| ellipsisChar            | String    | ...      | Text content of ellipsis.                                                                                                                  |
+| ellipsisNode            | ReactNode |          | Custom the ellipsis node.                                                                                                                  |
+| endExcludes             | String[]  | []       | The characters that want to remove at the end(Before ellipsis char).                                                                       |
+| reflowOnResize          | Boolean   |          | Whether update when container resize. Default true if native ellipsis support, otherwise false.                                            |
+| reflowThresholdOnResize | Number    |          | The threshold of reflow throttle on resize, unit is millisecond(You can reduce the resize frequency by setting `reflowThresholdOnResize`). |
 
 ## Events
 
