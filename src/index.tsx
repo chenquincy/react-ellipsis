@@ -18,7 +18,7 @@ function ReactEllipsis(props: EllipsisProps) {
     ellipsisNode = undefined,
     endExcludes = [],
     reflowOnResize = false,
-    reflowThresholdOnResize = 60,
+    reflowThresholdOnResize,
     onReflow,
     onEllipsisClick,
   } = props;
