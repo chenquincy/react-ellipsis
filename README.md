@@ -36,4 +36,4 @@ MIT
 
 ## Resources
 
-- [Changelog](https://github.com/chenquincy/react-ellipsis-component/blob/master/CHANGELOG.md)
+- [Changelog](https://github.com/chenquincy/react-ellipsis/blob/master/CHANGELOG.md)
