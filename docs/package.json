@@ -9,8 +9,7 @@
   },
   "dependencies": {
     "docz": "^2.3.1",
-    "prop-types": "^15.7.2",
-    "react-ellipsis-component": "latest"
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
     "react": ">=16",

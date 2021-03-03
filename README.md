@@ -37,3 +37,21 @@ MIT
 ## Resources
 
 - [Changelog](https://github.com/chenquincy/react-ellipsis/blob/master/CHANGELOG.md)
+
+## Develop & Contribution
+
+``` sh
+cd react-ellipsis
+# install deps of component
+yarn
+# to docs
+cd docs
+# install deps of docs
+yarn
+# dev
+yarn dev
+# now you can develop in src or docs, then see the change in docs site.
+# default: localhost:3000
+```
+
+If you want to contribute your code, send a pull request in [github](https://github.com/chenquincy/react-ellipsis/pulls).

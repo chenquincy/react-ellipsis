@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Ellipsis from 'react-ellipsis-component';
+import Ellipsis from '../../src';
 import './ellipsis.css';
 
 function EllipsisDemo(props) {
