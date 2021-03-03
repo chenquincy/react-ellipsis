@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.3](https://github.com/chenquincy/react-ellipsis/compare/v0.5.2...v0.5.3) (2021-03-03)
+
+
+### Bug Fixes
+
+* should hidden ellipsis when container size is just right ([44cd15e](https://github.com/chenquincy/react-ellipsis/commit/44cd15ef8a606694c4a84e73521195bce2730f7f))
+
 ### [0.5.2](https://github.com/chenquincy/react-ellipsis/compare/v0.5.1...v0.5.2) (2021-03-01)
 
 
