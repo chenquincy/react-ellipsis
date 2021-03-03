@@ -3,12 +3,9 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import { JsEllipsisProps } from '../../type';
 
-import classNames from '../../utils/classNames';
 import { getMaxHeight } from '../../utils/compute';
 import { frameThrottle, throttle } from '../../utils/throttle';
 import { isSupportRequestAnimationFrame, isEffective } from '../../utils/is';
-
-import './index.css';
 
 function JsEllipsis(props: JsEllipsisProps) {
   const {
@@ -27,31 +24,29 @@ function JsEllipsis(props: JsEllipsisProps) {
   const truncating = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
-  const [showEllipsis, setShowEllipsis] = useState(true);
+  const ellipsisRef = useRef<HTMLSpanElement>(null);
 
   function handleOnReflow(ellipsis: boolean, result: string) {
-    setShowEllipsis(ellipsis);
     if (onReflow && typeof onReflow === 'function') {
       onReflow(ellipsis, result);
     }
   }
-  /**
-   * Truncate text until meet the ellipsis conditions.
-   * @param maxHeight The max height of the container.
-   */
+  // Truncate text until meet the ellipsis conditions.
   function truncate() {
-    if (!ref.current || !textRef.current || truncating.current) {
+    if (!ref.current || !textRef.current || !ellipsisRef.current || truncating.current) {
       return;
     }
-    textRef.current.innerText = text;
     const max = isNaN(Number(maxHeight))
       ? getMaxHeight(ref.current, maxLine)
       : Number(maxHeight);
+    textRef.current.innerText = text;
+    ellipsisRef.current.style.display = 'none';
     const { height } = ref.current.getBoundingClientRect();
     if (height <= max) {
       handleOnReflow(false, text);
       return;
     }
+    ellipsisRef.current.style.display = 'inline';
     truncating.current = true;
     let currentText = '';
     let l = 0;
@@ -119,25 +114,13 @@ function JsEllipsis(props: JsEllipsisProps) {
   return (
     <div ref={ref} className="__react-ellipsis-js">
       <span ref={textRef} className="__react-ellipsis-js-text"></span>
-      {ellipsisNode ? (
-        <span
-          className={classNames('__react-ellipsis-js-ellipsis', {
-            hidden: !showEllipsis,
-          })}
-          onClick={handleEllipsisClick}
-        >
-          {ellipsisNode}
-        </span>
-      ) : (
-        <span
-          className={classNames('__react-ellipsis-js-ellipsis', {
-            hidden: !showEllipsis,
-          })}
-          onClick={handleEllipsisClick}
-        >
-          {ellipsisChar}
-        </span>
-      )}
+      <span
+        ref={ellipsisRef}
+        className="__react-ellipsis-js-ellipsis"
+        onClick={handleEllipsisClick}
+      >
+        {ellipsisNode || ellipsisChar}
+      </span>
     </div>
   );
 }
