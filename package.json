@@ -8,7 +8,7 @@
     "dist",
     "src"
   ],
-  "version": "0.5.2",
+  "version": "0.5.3",
   "license": "MIT",
   "engines": {
     "node": ">=10"
@@ -48,6 +48,7 @@
     }
   ],
   "devDependencies": {
+    "@emotion/core": "^10",
     "@size-limit/preset-small-lib": "^4.9.1",
     "@types/classnames": "^2.2.11",
     "@types/react": "^17.0.0",
