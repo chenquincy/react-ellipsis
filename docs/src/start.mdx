@@ -14,7 +14,7 @@ import Ellipsis from './Ellipsis.jsx';
 <Playground>
   <Ellipsis
     text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
-    maxLine={1}
+    maxLine="1"
   />
 </Playground>
 
@@ -25,8 +25,18 @@ Normal ellipsis base on css property `-webkit-line-clamp`, best performance and 
 <Playground>
   <Ellipsis
     text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
-    maxLine={1}
+    maxLine="1"
     ellipsisChar=" ...Read More"
+  />
+</Playground>
+
+## Custom Ellipsis Node
+
+<Playground>
+  <Ellipsis
+    text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+    maxLine="1"
+    ellipsisNode={<a href="/start#custom-ellipsis-node">...Read More</a>}
   />
 </Playground>
 
@@ -41,7 +51,7 @@ Normal Ellipsis support flexible ellipsis default. Should open by yourself when 
 <Playground>
   <Ellipsis
     text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
-    maxLine={1}
+    maxLine="1"
     ellipsisChar=" ...Read More"
     reflowOnResize={true}
   />
@@ -52,7 +62,7 @@ Normal Ellipsis support flexible ellipsis default. Should open by yourself when 
 <Playground>
   <Ellipsis
     text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
-    maxLine={1}
+    maxLine="1"
     ellipsisChar=" ...Read More"
     endExcludes={[' ', ',', '.']}
     reflowOnResize={true}

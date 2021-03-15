@@ -17,10 +17,7 @@ export interface JsEllipsisProps {
   maxHeight?: number;
   /** Text content of ellipsis, default '...'. */
   ellipsisChar?: string;
-  /**
-   * Customize the ellipsis style with html.
-   * (Warning: make sure the html is safe).
-   **/
+  /** Customize the ellipsis node. */
   ellipsisNode?: ReactNode;
   /** The chars that will be removed before ellipsis. */
   endExcludes?: string[];
