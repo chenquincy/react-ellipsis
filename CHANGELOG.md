@@ -36,7 +36,7 @@ All notable changes to this project will be documented in this file. See [standa
 * change dangerousEllipsisHtml to ellipsisNode & update docs ([0f257a2](https://github.com/chenquincy/react-ellipsis/commit/0f257a29723125297cc129f4080f75c78b3be0bb))
 
 <a name="0.4.0"></a>
-# [0.4.0](https://github.com/chenquincy/react-ellipsis/compare/v0.3.0...v0.4.0) (2021-02-28)
+## [0.4.0](https://github.com/chenquincy/react-ellipsis/compare/v0.3.0...v0.4.0) (2021-02-28)
 
 
 ### Features
