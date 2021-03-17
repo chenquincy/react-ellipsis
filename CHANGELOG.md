@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.4](https://github.com/chenquincy/react-ellipsis/compare/v0.5.3...v0.5.4) (2021-03-17)
+
+
+### Features
+
+* support html ellipsis ([8151082](https://github.com/chenquincy/react-ellipsis/commit/81510826fa9212a9218e3188d98d937e1b56d999))
+
+
+### Bug Fixes
+
+* update CHANGELOG.md ([60c0edb](https://github.com/chenquincy/react-ellipsis/commit/60c0edbbe056e360ccff248980eecaa4a0a34580))
+
 ### [0.5.3](https://github.com/chenquincy/react-ellipsis/compare/v0.5.2...v0.5.3) (2021-03-03)
 
 
