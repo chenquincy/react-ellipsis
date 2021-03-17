@@ -8,18 +8,19 @@ menu: 中文文档
 
 ## 属性
 
-| 属性名                  | 类型      | 默认值   | 描述                                                                       |
-| ----------------------- | --------- | -------- | -------------------------------------------------------------------------- |
-| text                    | String    | Required | 需要缩略的纯文本                                                           |
-| maxLine                 | Number    | 1        | 最大的可见行数                                                             |
-| maxHeight               | Number    |          | 最大的可见高度，优先级高于 maxLine                                         |
-| className               | String    |          | 自定义类名                                                                 |
-| ellipsis                | Boolean   | true     | 是否开启缩略                                                               |
-| ellipsisChar            | String    | ...      | 自定义缩略符文本                                                           |
-| ellipsisNode            | ReactNode |          | 自定义缩略符节点                                                           |
-| endExcludes             | String[]  | []       | 结尾处希望被过滤掉的字符（在缩略符之前）                                   |
-| reflowOnResize          | Boolean   |          | 容器大小改变时是否重新布局，原生缩略支持时默认是 true，否则为 false        |
-| reflowThresholdOnResize | Number    |          | 容器大小改变时重新编排的时间间隔，单位毫秒（可设置该参数调节重新渲染频率） |
+| 属性名                  | 类型      | 默认值   | 描述                                                                            |
+| ----------------------- | --------- | -------- | ------------------------------------------------------------------------------- |
+| text                    | String    | Required | 需要缩略的纯文本                                                                |
+| maxLine                 | Number    | 1        | 最大的可见行数                                                                  |
+| maxHeight               | Number    |          | 最大的可见高度，优先级高于 maxLine                                              |
+| className               | String    |          | 自定义类名                                                                      |
+| ellipsis                | Boolean   | true     | 是否开启缩略                                                                    |
+| ellipsisChar            | String    | ...      | 自定义缩略符文本                                                                |
+| ellipsisNode            | ReactNode |          | 自定义缩略符节点                                                                |
+| endExcludes             | String[]  | []       | 结尾处希望被过滤掉的字符（在缩略符之前）                                        |
+| dangerouslyUseInnerHTML | Boolean   | false    | 将 text 当做 html 解析（请确保传递的 text 安全可靠，否则可能导致 XSS 安全问题） |
+| reflowOnResize          | Boolean   |          | 容器大小改变时是否重新布局，原生缩略支持时默认是 true，否则为 false             |
+| reflowThresholdOnResize | Number    |          | 容器大小改变时重新编排的时间间隔，单位毫秒（可设置该参数调节重新渲染频率）      |
 
 ## 事件
 

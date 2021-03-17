@@ -1,16 +1,20 @@
 import { ReactNode } from 'react';
 
 export interface NativeEllipsisProps {
-  /** Whether ellipsis content, default true. */
-  ellipsis: boolean;
   /** Pure text that you want to ellipsis. */
   text: string;
+  /** Whether ellipsis content, default true. */
+  ellipsis: boolean;
   /** Max count of visible lines. */
   maxLine: number;
+  /** Insert text to container with innerHTML(Warning: make sure the text is safe). */
+  dangerouslyUseInnerHTML?: boolean;
 }
 export interface JsEllipsisProps {
   /** Pure text that you want to ellipsis. */
   text: string;
+  /** Insert text to container with innerHTML(Warning: make sure the text is safe). */
+  dangerouslyUseInnerHTML?: boolean;
   /** Max count of visible lines. */
   maxLine?: number;
   /** Max visible height of container. */

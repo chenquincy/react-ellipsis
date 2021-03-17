@@ -18,6 +18,7 @@ menu: English Docs
 | ellipsisChar            | String    | ...      | Text content of ellipsis.                                                                                                                  |
 | ellipsisNode            | ReactNode |          | Custom the ellipsis node.                                                                                                                  |
 | endExcludes             | String[]  | []       | The characters that want to remove at the end(Before ellipsis char).                                                                       |
+| dangerouslyUseInnerHTML | Boolean   | false    | Parse text as html(Make sure the text that you pass is safe, or you may been attacked by XSS).                                             |
 | reflowOnResize          | Boolean   |          | Whether update when container resize. Default true if native ellipsis support, otherwise false.                                            |
 | reflowThresholdOnResize | Number    |          | The threshold of reflow throttle on resize, unit is millisecond(You can reduce the resize frequency by setting `reflowThresholdOnResize`). |
 

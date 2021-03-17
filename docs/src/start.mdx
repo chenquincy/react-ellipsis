@@ -69,4 +69,23 @@ Normal Ellipsis support flexible ellipsis default. Should open by yourself when 
   />
 </Playground>
 
+## Rich text
+
+You can use rich text by setting `dangerouslyUseInnerHTML=true`.
+
+Recommended to use maxHeight instead of maxLine when use rich text.
+Some child element in rich text may have different line-height from container
+which will lead to compute maxLine error.
+
+> <p style="color: red;">Warning⚠️: make sure the text that you pass is safe absolutely, or you may been attacked by XSS.</p>
+
+<Playground>
+  <Ellipsis
+    text="A <b>high performance</b> and <b>customized</b> ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+    maxHeight="30"
+    dangerouslyUseInnerHTML={true}
+    reflowOnResize={true}
+  />
+</Playground>
+
 You can refer to [API Docs](/api) for more features.

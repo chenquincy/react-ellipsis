@@ -12,6 +12,7 @@ function ReactEllipsis(props: EllipsisProps) {
     className,
     ellipsis = true,
     text,
+    dangerouslyUseInnerHTML = false,
     maxLine = 1,
     maxHeight,
     ellipsisChar = '…',
@@ -23,21 +24,28 @@ function ReactEllipsis(props: EllipsisProps) {
     onEllipsisClick,
   } = props;
   const useNativeEllipsis =
-    isSupportNativeEllipsis &&
-    maxHeight === undefined &&
-    ellipsisChar === '…' &&
-    !ellipsisNode &&
-    endExcludes.length === 0 &&
-    !onReflow &&
-    !onEllipsisClick;
+    !ellipsis ||
+    (isSupportNativeEllipsis &&
+      maxHeight === undefined &&
+      ellipsisChar === '…' &&
+      !ellipsisNode &&
+      endExcludes.length === 0 &&
+      !onReflow &&
+      !onEllipsisClick);
 
-  return ellipsis ? (
+  return (
     <div className={classNames('__react-ellipsis', className)}>
       {useNativeEllipsis ? (
-        <NativeEllipsis ellipsis={ellipsis} text={text} maxLine={maxLine} />
+        <NativeEllipsis
+          ellipsis={ellipsis}
+          dangerouslyUseInnerHTML={dangerouslyUseInnerHTML}
+          text={text}
+          maxLine={maxLine}
+        />
       ) : (
         <JsEllipsis
           text={text}
+          dangerouslyUseInnerHTML={dangerouslyUseInnerHTML}
           maxLine={maxLine}
           maxHeight={maxHeight}
           ellipsisChar={ellipsisChar}
@@ -50,8 +58,6 @@ function ReactEllipsis(props: EllipsisProps) {
         />
       )}
     </div>
-  ) : (
-    <div className={classNames('__react-ellipsis', className)}>{text}</div>
   );
 }
 

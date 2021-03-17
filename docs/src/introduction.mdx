@@ -19,16 +19,9 @@ Github Repo: [react-ellipsis](https://github.com/chenquincy/react-ellipsis) (Loo
 
 <Playground>
   <Ellipsis
-    text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
+    text="<b>A high performance and customized</b> ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
     maxLine={1}
-    ellipsisChar="...Read More"
-    endExcludes={[' ', ',', '.']}
+    dangerouslyUseInnerHTML={true}
     reflowOnResize={true}
-    onReflow={(ellipsis, text) => {
-      console.info(' => ', ellipsis, text);
-    }}
-    onEllipsisClick={() => {
-      console.info('click ellipsis');
-    }}
   />
 </Playground>
