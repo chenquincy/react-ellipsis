@@ -1,5 +1,5 @@
 /// <reference types="resize-observer-browser" />
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { JsEllipsisProps } from '../../type';
 
@@ -111,7 +111,7 @@ function JsEllipsis(props: JsEllipsisProps) {
         }
         node.innerHTML = html;
         // recursive truncate node
-        truncateHTML(container, node as HTMLElement, max);
+        truncateHTML(container, node, max);
       }
     } else {
       const nodes = [].slice.call(children);

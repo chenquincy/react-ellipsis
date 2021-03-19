@@ -1,6 +1,6 @@
 # React-ellipsis-component
 
-A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, ...etc.
+A high performance and customized ellipsis component for react. Support to custom ellipsis char, custom ellipsis node, end char filter, rich text, ...etc.
 
 ![](https://img.shields.io/npm/v/react-ellipsis-component.svg) ![](https://img.shields.io/npm/dt/react-ellipsis-component.svg) ![](https://img.shields.io/badge/language-javascript-yellow.svg)
 
@@ -40,7 +40,7 @@ MIT
 
 ## Develop & Contribution
 
-``` sh
+```sh
 cd react-ellipsis
 # install deps of component
 yarn

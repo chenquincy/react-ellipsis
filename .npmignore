@@ -2,3 +2,4 @@
 .gitignore
 example
 node_modules
+docs
