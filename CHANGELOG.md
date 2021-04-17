@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/chenquincy/react-ellipsis/compare/v0.5.4...v1.0.0) (2021-04-17)
+
+
+### Bug Fixes
+
+* flashing when switch ellipsis ([33c62d2](https://github.com/chenquincy/react-ellipsis/commit/33c62d28207c6521a8d85bb567649f52072f2a05))
+
 ### [0.5.4](https://github.com/chenquincy/react-ellipsis/compare/v0.5.3...v0.5.4) (2021-03-17)
 
 
