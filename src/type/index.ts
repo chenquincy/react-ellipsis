@@ -13,14 +13,14 @@ export interface NativeEllipsisProps {
 export interface JsEllipsisProps {
   /** Pure text that you want to ellipsis. */
   text: string;
+  /** Whether ellipsis content, default true. */
+  ellipsis: boolean;
   /** Insert text to container with innerHTML(Warning: make sure the text is safe). */
   dangerouslyUseInnerHTML?: boolean;
   /** Max count of visible lines. */
   maxLine?: number;
   /** Max visible height of container. */
   maxHeight?: number;
-  /** Text content of ellipsis, default '...'. */
-  ellipsisChar?: string;
   /** Customize the ellipsis node. */
   ellipsisNode?: ReactNode;
   /** The chars that will be removed before ellipsis. */
@@ -37,6 +37,4 @@ export interface JsEllipsisProps {
 export interface EllipsisProps extends JsEllipsisProps {
   /** Custom className of component. */
   className?: string;
-  /** Whether ellipsis content, default true. */
-  ellipsis: boolean;
 }

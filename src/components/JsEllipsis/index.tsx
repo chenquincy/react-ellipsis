@@ -1,5 +1,5 @@
 /// <reference types="resize-observer-browser" />
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 import { JsEllipsisProps } from '../../type';
 
@@ -14,7 +14,7 @@ function JsEllipsis(props: JsEllipsisProps) {
     dangerouslyUseInnerHTML,
     maxLine = 1,
     maxHeight,
-    ellipsisChar,
+    ellipsis,
     ellipsisNode,
     endExcludes = [],
     reflowOnResize,
@@ -33,19 +33,23 @@ function JsEllipsis(props: JsEllipsisProps) {
       onReflow(ellipsis, result);
     }
   }
-  function reflow() {
+
+  const reflow = useCallback(() => {
     if (!ref.current || !textRef.current || !ellipsisRef.current || truncating.current) {
       return;
     }
-    const max = isNaN(Number(maxHeight))
-      ? getMaxHeight(ref.current, maxLine)
-      : Number(maxHeight);
+    ellipsisRef.current.style.display = 'none';
     if (dangerouslyUseInnerHTML) {
       textRef.current.innerHTML = text;
     } else {
       textRef.current.innerText = text;
     }
-    ellipsisRef.current.style.display = 'none';
+    if (!ellipsis) {
+      return;
+    }
+    const max = isNaN(Number(maxHeight))
+      ? getMaxHeight(ref.current, maxLine)
+      : Number(maxHeight);
     const { height } = ref.current.getBoundingClientRect();
     if (height <= max) {
       handleOnReflow(false, text);
@@ -61,7 +65,15 @@ function JsEllipsis(props: JsEllipsisProps) {
       truncateText(ref.current, textRef.current, max);
     }
     truncating.current = false;
-  }
+  }, [
+    text,
+    ellipsis,
+    dangerouslyUseInnerHTML,
+    maxLine,
+    maxHeight,
+    ellipsisNode,
+    endExcludes,
+  ]);
   function truncateText(container: HTMLElement, textContainer: HTMLElement, max: number) {
     const text = textContainer.textContent || '';
     let currentText = '';
@@ -135,15 +147,7 @@ function JsEllipsis(props: JsEllipsisProps) {
   // Call truncate function to reflow when the main props change.
   useEffect(() => {
     reflow();
-  }, [
-    text,
-    dangerouslyUseInnerHTML,
-    maxLine,
-    maxHeight,
-    ellipsisChar,
-    ellipsisNode,
-    endExcludes,
-  ]);
+  }, [reflow]);
 
   // Observe resize event of container if reflowOnResize is true.
   useEffect(() => {
@@ -183,7 +187,7 @@ function JsEllipsis(props: JsEllipsisProps) {
         className="__react-ellipsis-js-ellipsis"
         onClick={handleEllipsisClick}
       >
-        {ellipsisNode || ellipsisChar}
+        {ellipsisNode}
       </span>
     </div>
   );
