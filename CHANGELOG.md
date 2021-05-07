@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/chenquincy/react-ellipsis/compare/v1.0.0...v1.0.1) (2021-05-07)
+
+
+### Bug Fixes
+
+* compute line-height error with normal line-height ([f9603e7](https://github.com/chenquincy/react-ellipsis/commit/f9603e7784bf204ecc074491f3fa7e6016f76aa0))
+
 ## [1.0.0](https://github.com/chenquincy/react-ellipsis/compare/v0.5.4...v1.0.0) (2021-04-17)
 
 
