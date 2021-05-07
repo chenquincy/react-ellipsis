@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef } from 'react';
 
 import { JsEllipsisProps } from '../../type';
 
-import { getMaxHeight } from '../../utils/compute';
+import { getLineHeight } from '../../utils/compute';
 import { frameThrottle, throttle } from '../../utils/throttle';
 import { isSupportRequestAnimationFrame, isEffective } from '../../utils/is';
 import { wrapTextChildNodesWithSpan } from '../../utils/dom';
@@ -28,6 +28,13 @@ function JsEllipsis(props: JsEllipsisProps) {
   const textRef = useRef<HTMLSpanElement>(null);
   const ellipsisRef = useRef<HTMLSpanElement>(null);
 
+  const lineHeightRef = useRef(0);
+  useEffect(() => {
+    if (ref.current) {
+      lineHeightRef.current = getLineHeight(ref.current);
+    }
+  }, []);
+
   function handleOnReflow(ellipsis: boolean, result: string) {
     if (onReflow && typeof onReflow === 'function') {
       onReflow(ellipsis, result);
@@ -48,7 +55,7 @@ function JsEllipsis(props: JsEllipsisProps) {
       return;
     }
     const max = isNaN(Number(maxHeight))
-      ? getMaxHeight(ref.current, maxLine)
+      ? lineHeightRef.current * maxLine
       : Number(maxHeight);
     const { height } = ref.current.getBoundingClientRect();
     if (height <= max) {

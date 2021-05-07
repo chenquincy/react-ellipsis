@@ -1,4 +1,5 @@
 .demo-container {
+  line-height: normal;
   width: 600px;
   resize: horizontal;
   overflow: hidden;

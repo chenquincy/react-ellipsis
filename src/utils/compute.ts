@@ -31,19 +31,16 @@ function computeStyle(element: HTMLElement, prop: string) {
 export function getLineHeight(element: HTMLElement) {
   let lineHeight = computeStyle(element, 'line-height');
   if (lineHeight === 'normal') {
-    // Normal line heights is different from browser to browser.
-    // Use 1.5 to compatible with.
-    return parseInt(computeStyle(element, 'font-size')) * 1.5;
+    // Create a temp element to get line-height
+    const dom = document.createElement('span');
+    dom.style.width = '300px';
+    dom.style.position = 'absolute';
+    dom.style.visibility = 'hidden';
+    dom.innerText = 'test';
+    element.appendChild(dom);
+    const height = dom.clientHeight;
+    element.removeChild(dom);
+    return height;
   }
   return parseInt(lineHeight);
-}
-
-/**
- * Compute the max height of an element by max line count.
- * @param {HTMLDivElement} element The element to compute max height.
- * @param {number} maxLine The max line count of element.
- * @returns {number}
- */
-export function getMaxHeight(element: HTMLDivElement, maxLine: number) {
-  return getLineHeight(element) * maxLine;
 }
