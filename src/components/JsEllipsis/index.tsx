@@ -6,7 +6,7 @@ import { JsEllipsisProps } from '../../type';
 import { getLineHeight } from '../../utils/compute';
 import { frameThrottle, throttle } from '../../utils/throttle';
 import { isSupportRequestAnimationFrame, isEffective } from '../../utils/is';
-import { wrapTextChildNodesWithSpan } from '../../utils/dom';
+import { getElementHeight, wrapTextChildNodesWithSpan } from '../../utils/dom';
 
 function JsEllipsis(props: JsEllipsisProps) {
   const {
@@ -29,11 +29,6 @@ function JsEllipsis(props: JsEllipsisProps) {
   const ellipsisRef = useRef<HTMLSpanElement>(null);
 
   const lineHeightRef = useRef(0);
-  useEffect(() => {
-    if (ref.current) {
-      lineHeightRef.current = getLineHeight(ref.current);
-    }
-  }, []);
 
   function handleOnReflow(ellipsis: boolean, result: string) {
     if (onReflow && typeof onReflow === 'function') {
@@ -57,7 +52,7 @@ function JsEllipsis(props: JsEllipsisProps) {
     const max = isNaN(Number(maxHeight))
       ? lineHeightRef.current * maxLine
       : Number(maxHeight);
-    const { height } = ref.current.getBoundingClientRect();
+    let height = getElementHeight(ref.current);
     if (height <= max) {
       handleOnReflow(false, text);
       return;
@@ -153,6 +148,9 @@ function JsEllipsis(props: JsEllipsisProps) {
   }
   // Call truncate function to reflow when the main props change.
   useEffect(() => {
+    if (ref.current) {
+      lineHeightRef.current = getLineHeight(ref.current);
+    }
     reflow();
   }, [reflow]);
 

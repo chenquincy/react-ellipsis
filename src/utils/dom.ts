@@ -20,3 +20,7 @@ export function wrapTextChildNodesWithSpan(node: Node) {
     });
   }
 }
+
+export function getElementHeight(element: HTMLElement) {
+  return element.getBoundingClientRect().height;
+}

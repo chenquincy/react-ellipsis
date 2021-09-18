@@ -40,7 +40,8 @@ export function getLineHeight(element: HTMLElement) {
     element.appendChild(dom);
     const height = dom.clientHeight;
     element.removeChild(dom);
-    return height;
+    // Compatible some browser
+    return height * 1.1;
   }
   return parseInt(lineHeight);
 }
