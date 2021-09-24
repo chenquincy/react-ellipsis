@@ -101,9 +101,9 @@ function JsEllipsis(props: JsEllipsisProps) {
     while (endExcludes.includes(currentText[currentText.length - 1])) {
       currentText = currentText.slice(0, -1);
     }
+    textContainer.innerText = currentText;
     // Callback after reflow.
     handleOnReflow(true, currentText);
-    textContainer.innerText = currentText;
   }
   function truncateHTML(container: HTMLElement, textContainer: HTMLElement, max: number) {
     // only enter this function when container overflow.
