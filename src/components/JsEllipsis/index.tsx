@@ -1,5 +1,5 @@
 /// <reference types="resize-observer-browser" />
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
 
 import { JsEllipsisProps } from '../../type';
 
@@ -147,7 +147,7 @@ function JsEllipsis(props: JsEllipsisProps) {
     }
   }
   // Call truncate function to reflow when the main props change.
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (ref.current) {
       lineHeightRef.current = getLineHeight(ref.current);
     }
@@ -155,7 +155,7 @@ function JsEllipsis(props: JsEllipsisProps) {
   }, [reflow]);
 
   // Observe resize event of container if reflowOnResize is true.
-  useEffect(() => {
+  useLayoutEffect(() => {
     let observer: ResizeObserver;
     if (ref.current && reflowOnResize) {
       // For performance, throttle the truncate frequency
