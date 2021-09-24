@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/chenquincy/react-ellipsis/compare/v1.0.3...v1.0.4) (2021-09-24)
+
+
+### Bug Fixes
+
+* replace useEffect with useLayoutEffect to avoid content flashing ([5518c96](https://github.com/chenquincy/react-ellipsis/commit/5518c9640e9cb649be797eb4c5fcf6e672473afc))
+
 ### [1.0.3](https://github.com/chenquincy/react-ellipsis/compare/v1.0.2...v1.0.3) (2021-09-24)
 
 
