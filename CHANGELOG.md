@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/chenquincy/react-ellipsis/compare/v1.0.2...v1.0.3) (2021-09-24)
+
+
+### Bug Fixes
+
+* onReflow timing error ([9a9d7d8](https://github.com/chenquincy/react-ellipsis/commit/9a9d7d8f10ded83f2281e836633bed134c5359f6))
+
 ### [1.0.2](https://github.com/chenquincy/react-ellipsis/compare/v1.0.1...v1.0.2) (2021-09-18)
 
 
