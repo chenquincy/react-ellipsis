@@ -1,5 +1,5 @@
 /// <reference types="resize-observer-browser" />
-import React, { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useCallback, useLayoutEffect, useRef } from 'react';
 
 import { JsEllipsisProps } from '../../type';
 
