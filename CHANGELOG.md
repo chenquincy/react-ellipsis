@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/chenquincy/react-ellipsis/compare/v1.0.4...v1.1.0) (2021-10-11)
+
+
+### Features
+
+* add visibleLine and visibleHeight to support "show n lines when content more than m lines" ([ce06ac4](https://github.com/chenquincy/react-ellipsis/commit/ce06ac4bc255b130d253bfab5e12b3e5f7a61053)), closes [#8](https://github.com/chenquincy/react-ellipsis/issues/8)
+
 ### [1.0.4](https://github.com/chenquincy/react-ellipsis/compare/v1.0.3...v1.0.4) (2021-09-24)
 
 
