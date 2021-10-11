@@ -11,6 +11,8 @@ A high performance and customized ellipsis component for react. Support to custo
 
 ## Demo
 
+
+
 ![demo](https://static.quincychen.cn/demo.gif)
 
 ## Buy Me A Coffee

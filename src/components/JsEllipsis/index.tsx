@@ -1,4 +1,4 @@
-/// <reference types="resize-observer-browser" />
+// <reference types="resize-observer-browser" />
 import React, { useCallback, useLayoutEffect, useRef } from 'react';
 
 import { JsEllipsisProps } from '../../type';
@@ -13,7 +13,9 @@ function JsEllipsis(props: JsEllipsisProps) {
     text,
     dangerouslyUseInnerHTML,
     maxLine = 1,
+    visibleLine,
     maxHeight,
+    visibleHeight,
     ellipsis,
     ellipsisNode,
     endExcludes = [],
@@ -22,6 +24,8 @@ function JsEllipsis(props: JsEllipsisProps) {
     onReflow,
     onEllipsisClick,
   } = props;
+  // default visibleLine equal to maxLine.
+  const _visibleLine = typeof visibleLine === 'undefined' ? maxLine : visibleLine;
 
   const truncating = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -49,22 +53,30 @@ function JsEllipsis(props: JsEllipsisProps) {
     if (!ellipsis) {
       return;
     }
-    const max = isNaN(Number(maxHeight))
-      ? lineHeightRef.current * maxLine
-      : Number(maxHeight);
-    let height = getElementHeight(ref.current);
-    if (height <= max) {
+
+    const max =
+      typeof maxHeight === 'undefined' ? lineHeightRef.current * maxLine : maxHeight;
+    // desired visible height of container.
+    const visibleMax =
+      typeof visibleHeight === 'undefined'
+        ? lineHeightRef.current * _visibleLine
+        : visibleHeight;
+
+    const height = getElementHeight(ref.current);
+    // content will be truncated if the content's height bigger than Math.max(max, visibleMax).
+    if (height <= Math.max(max, visibleMax)) {
       handleOnReflow(false, text);
       return;
     }
+
     truncating.current = true;
     ellipsisRef.current.style.display = 'inline';
     if (dangerouslyUseInnerHTML) {
       // wrap the text children node with span element.
       wrapTextChildNodesWithSpan(textRef.current);
-      truncateHTML(ref.current, textRef.current, max);
+      truncateHTML(ref.current, textRef.current, visibleMax);
     } else {
-      truncateText(ref.current, textRef.current, max);
+      truncateText(ref.current, textRef.current, visibleMax);
     }
     truncating.current = false;
   }, [
@@ -72,7 +84,9 @@ function JsEllipsis(props: JsEllipsisProps) {
     ellipsis,
     dangerouslyUseInnerHTML,
     maxLine,
+    visibleLine,
     maxHeight,
+    visibleHeight,
     ellipsisNode,
     endExcludes,
   ]);

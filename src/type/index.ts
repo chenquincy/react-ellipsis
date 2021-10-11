@@ -17,10 +17,14 @@ export interface JsEllipsisProps {
   ellipsis: boolean;
   /** Insert text to container with innerHTML(Warning: make sure the text is safe). */
   dangerouslyUseInnerHTML?: boolean;
-  /** Max count of visible lines. */
+  /** Content will be truncated if the line count of visible content more than it. */
   maxLine?: number;
-  /** Max visible height of container. */
+  /** Max count of visible lines, default equal to maxLine. */
+  visibleLine?: number;
+  /** Content will be truncated if the height of visible content more than it. */
   maxHeight?: number;
+  /** Max height of visible content, default equal to maxHeight. */
+  visibleHeight?: number;
   /** Customize the ellipsis node. */
   ellipsisNode?: ReactNode;
   /** The chars that will be removed before ellipsis. */
