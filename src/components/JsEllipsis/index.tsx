@@ -94,7 +94,7 @@ function JsEllipsis(props: JsEllipsisProps) {
     const text = textContainer.textContent || '';
     let currentText = '';
     let l = 0;
-    let r = text.length - 1;
+    let r = text.length;
     // Binary truncate text until get the max limit fragment of text.
     while (l < r) {
       const m = Math.floor((l + r) / 2);
