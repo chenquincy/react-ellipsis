@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/chenquincy/react-ellipsis/compare/v1.1.1...v1.1.2) (2021-11-08)
+
+
+### Bug Fixes
+
+* resolve the error of bisection method ([e698898](https://github.com/chenquincy/react-ellipsis/commit/e698898f5f3dc614fda1fc24b80b7c5992d2da56))
+* resolve the error of isSupportNativeEllipsis ([aa013a8](https://github.com/chenquincy/react-ellipsis/commit/aa013a864a13a0434662fdab053a11f4076ceabc))
+
 ### [1.1.1](https://github.com/chenquincy/react-ellipsis/compare/v1.1.0...v1.1.1) (2021-10-12)
 
 ## [1.1.0](https://github.com/chenquincy/react-ellipsis/compare/v1.0.4...v1.1.0) (2021-10-11)
