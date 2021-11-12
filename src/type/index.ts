@@ -31,8 +31,6 @@ export interface JsEllipsisProps {
   endExcludes?: string[];
   /** Whether update when container resize, default false. */
   reflowOnResize?: boolean;
-  /** The threshold of reflow throttle on resize, default 60. */
-  reflowThresholdOnResize?: number;
   /** Text reflow callback, only supported with js ellipsis. */
   onReflow?: (ellipsis: boolean, text: string) => void;
   /** Ellipsis click callback. */

@@ -4,8 +4,6 @@ import React, { useCallback, useLayoutEffect, useRef } from 'react';
 import { JsEllipsisProps } from '../../type';
 
 import { getLineHeight } from '../../utils/compute';
-import { frameThrottle, throttle } from '../../utils/throttle';
-import { isSupportRequestAnimationFrame, isEffective } from '../../utils/is';
 import { getElementHeight, wrapTextChildNodesWithSpan } from '../../utils/dom';
 
 function JsEllipsis(props: JsEllipsisProps) {
@@ -20,7 +18,6 @@ function JsEllipsis(props: JsEllipsisProps) {
     ellipsisNode,
     endExcludes = [],
     reflowOnResize,
-    reflowThresholdOnResize,
     onReflow,
     onEllipsisClick,
   } = props;
@@ -59,7 +56,9 @@ function JsEllipsis(props: JsEllipsisProps) {
     // desired visible height of container.
     const visibleMax =
       typeof visibleHeight === 'undefined'
-        ? lineHeightRef.current * _visibleLine
+        ? typeof maxHeight === 'undefined'
+          ? lineHeightRef.current * _visibleLine
+          : maxHeight
         : visibleHeight;
 
     const height = getElementHeight(ref.current);
@@ -172,17 +171,7 @@ function JsEllipsis(props: JsEllipsisProps) {
   useLayoutEffect(() => {
     let observer: ResizeObserver;
     if (ref.current && reflowOnResize) {
-      // For performance, throttle the truncate frequency
-      let throttleFn;
-      if (!isEffective(reflowThresholdOnResize) && isSupportRequestAnimationFrame) {
-        // Resize by using window.requestAnimationFrame
-        // if it supported and "reflowThresholdOnResize" isn't effective.
-        throttleFn = frameThrottle(reflow);
-      } else {
-        // Or using setTimeout with throttle.
-        throttleFn = throttle(reflow, reflowThresholdOnResize);
-      }
-      observer = new ResizeObserver(throttleFn);
+      observer = new ResizeObserver(reflow);
       observer.observe(ref.current);
     }
     return () => {
