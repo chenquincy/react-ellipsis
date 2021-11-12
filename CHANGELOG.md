@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/chenquincy/react-ellipsis/compare/v1.1.2...v1.1.3) (2021-11-12)
+
+
+### Bug Fixes
+
+* flashing on resize if use requestAnimationFrame ([e6ff186](https://github.com/chenquincy/react-ellipsis/commit/e6ff18683f1bf2f0cfcb23bd140af168208522a8))
+
 ### [1.1.2](https://github.com/chenquincy/react-ellipsis/compare/v1.1.1...v1.1.2) (2021-11-08)
 
 
