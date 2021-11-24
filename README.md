@@ -2,6 +2,8 @@
 
 A high performance and customized ellipsis component for react. Support to custom ellipsis char, custom ellipsis node, end char filter, rich text, ...etc.
 
+Searching for Vue? Refer to [vue-ellipsis-component](https://github.com/ruofee/vue-ellipsis-component).
+
 ![](https://img.shields.io/npm/v/react-ellipsis-component.svg) ![](https://img.shields.io/npm/dt/react-ellipsis-component.svg) ![](https://img.shields.io/badge/language-javascript-yellow.svg)
 
 ## Docs
