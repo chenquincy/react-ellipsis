@@ -6,6 +6,8 @@ import { JsEllipsisProps } from '../../type';
 import { getLineHeight } from '../../utils/compute';
 import { getElementHeight, wrapTextChildNodesWithSpan } from '../../utils/dom';
 
+let observer: ResizeObserver;
+
 function JsEllipsis(props: JsEllipsisProps) {
   const {
     text,
@@ -169,16 +171,17 @@ function JsEllipsis(props: JsEllipsisProps) {
 
   // Observe resize event of container if reflowOnResize is true.
   useLayoutEffect(() => {
-    let observer: ResizeObserver;
     if (ref.current && reflowOnResize) {
-      observer = new ResizeObserver(reflow);
-      observer.observe(ref.current);
+      if (!observer && ellipsis) {
+        observer = new ResizeObserver(reflow);
+        observer.observe(ref.current);
+      }
     }
     return () => {
       // Remove observer when component unmounted.
       observer?.disconnect();
     };
-  }, []);
+  }, [ellipsis]);
 
   // callback of ellipsis click event
   function handleEllipsisClick() {
