@@ -175,7 +175,7 @@ function JsEllipsis(props: JsEllipsisProps) {
     if (dom && reflowOnResize) {
       if (!observer && ellipsis) {
         observer = new ResizeObserver(reflow);
-        observer.observe(ref.current);
+        observer.observe(dom);
       }
     }
     return () => {
