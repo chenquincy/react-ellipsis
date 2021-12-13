@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.7](https://github.com/chenquincy/react-ellipsis/compare/v1.1.6...v1.1.7) (2021-12-13)
+
+
+### Bug Fixes
+
+* type error ([78db293](https://github.com/chenquincy/react-ellipsis/commit/78db293bb6179fe77a211d90aabb02d13ae748b4))
+
 ### [1.1.6](https://github.com/chenquincy/react-ellipsis/compare/v1.1.5...v1.1.6) (2021-12-13)
 
 ### [1.1.5](https://github.com/chenquincy/react-ellipsis/compare/v1.1.4...v1.1.5) (2021-12-12)
