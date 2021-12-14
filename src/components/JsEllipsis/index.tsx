@@ -6,8 +6,6 @@ import { JsEllipsisProps } from '../../type';
 import { getLineHeight } from '../../utils/compute';
 import { getElementHeight, wrapTextChildNodesWithSpan } from '../../utils/dom';
 
-let observer: ResizeObserver | undefined;
-
 function JsEllipsis(props: JsEllipsisProps) {
   const {
     text,
@@ -26,6 +24,7 @@ function JsEllipsis(props: JsEllipsisProps) {
   // default visibleLine equal to maxLine.
   const _visibleLine = typeof visibleLine === 'undefined' ? maxLine : visibleLine;
 
+  const observerRef = useRef<ResizeObserver | null>(null);
   const truncating = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
@@ -173,16 +172,16 @@ function JsEllipsis(props: JsEllipsisProps) {
   useLayoutEffect(() => {
     const dom = ref.current;
     if (dom && reflowOnResize) {
-      if (!observer && ellipsis) {
-        observer = new ResizeObserver(reflow);
-        observer.observe(dom);
+      if (!observerRef.current && ellipsis) {
+        observerRef.current = new ResizeObserver(reflow);
+        observerRef.current.observe(dom);
       }
     }
     return () => {
-      if (observer && dom) {
+      if (observerRef.current && dom) {
         // Remove observer when component unmounted.
-        observer?.unobserve(dom);
-        observer = undefined;
+        observerRef.current?.unobserve(dom);
+        observerRef.current = null;
       }
     };
   }, [ellipsis, ref.current]);
