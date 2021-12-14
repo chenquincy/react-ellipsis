@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.8](https://github.com/chenquincy/react-ellipsis/compare/v1.1.7...v1.1.8) (2021-12-14)
+
+
+### Bug Fixes
+
+* resizeOnReflow not work with multi ellipsis components ([e4a5290](https://github.com/chenquincy/react-ellipsis/commit/e4a5290ff93e5ffdfb185a823904801d81cbeced)), closes [#16](https://github.com/chenquincy/react-ellipsis/issues/16)
+
 ### [1.1.7](https://github.com/chenquincy/react-ellipsis/compare/v1.1.6...v1.1.7) (2021-12-13)
 
 
