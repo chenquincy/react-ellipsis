@@ -8,12 +8,10 @@ Searching for Vue? Refer to [vue-ellipsis-component](https://github.com/ruofee/v
 
 ## Docs
 
-- [English Docs](http://react-ellipsis.quincychen.cn/)
-- [中文文档](http://react-ellipsis.quincychen.cn/zh/)
+- [English Docs](https://react-ellipsis.quincychen.cn/)
+- [中文文档](https://react-ellipsis.quincychen.cn/zh/)
 
 ## Demo
-
-
 
 ![demo](https://static.quincychen.cn/demo.gif)
 
@@ -38,9 +36,9 @@ Open source is not easy, you can buy me a coffee. _Note your name or github id s
 
 ❤️ Thanks these guys for donations. Contact me with <a href="mailto:mail@quincychen.cn" target="_blank" rel="noopener noreferrer nofollow" title="EMail">email</a>, if you had donated but not on the list.
 
-| Donors                                  | Amount  | Time             |
-| --------------------------------------- | ------- | ---------------- |
-| [07akioni](https://github.com/07akioni) | ￥20.01 | 2021-09-27 13:53 |
+| Donors                                  | Amount   | Time             |
+| --------------------------------------- | -------- | ---------------- |
+| [07akioni](https://github.com/07akioni) | ￥ 20.01 | 2021-09-27 13:53 |
 
 ## License
 
