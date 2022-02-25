@@ -1,5 +1,5 @@
-// <reference types="resize-observer-browser" />
 import React, { useCallback, useLayoutEffect, useRef } from 'react';
+import ResizeObserver from 'resize-observer-polyfill';
 
 import { JsEllipsisProps } from '../../type';
 
