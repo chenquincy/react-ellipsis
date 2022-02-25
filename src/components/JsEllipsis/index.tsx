@@ -184,7 +184,7 @@ function JsEllipsis(props: JsEllipsisProps) {
         observerRef.current = null;
       }
     };
-  }, [ellipsis, ref.current]);
+  }, [ellipsis]);
 
   // callback of ellipsis click event
   function handleEllipsisClick() {
