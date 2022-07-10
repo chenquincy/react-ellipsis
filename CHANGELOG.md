@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.10](https://github.com/chenquincy/react-ellipsis/compare/v1.1.9...v1.1.10) (2022-07-10)
+
+
+### Bug Fixes
+
+* **docs:** rich text styles not work and docs desc ([90bc143](https://github.com/chenquincy/react-ellipsis/commit/90bc1431f8bf0a39166b893f5e9edb3a784a1493))
+* warning when use on server render ([77132e0](https://github.com/chenquincy/react-ellipsis/commit/77132e0bdf950c7ead2f91d7b9fa853b0720f6a6))
+
 ### [1.1.9](https://github.com/chenquincy/react-ellipsis/compare/v1.1.8...v1.1.9) (2022-02-25)
 
 ### [1.1.8](https://github.com/chenquincy/react-ellipsis/compare/v1.1.7...v1.1.8) (2021-12-14)
