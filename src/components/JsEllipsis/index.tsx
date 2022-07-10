@@ -1,8 +1,7 @@
-import React, { useCallback, useLayoutEffect, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
-
+import useIsomorphicLayoutEffect from '../../hooks';
 import { JsEllipsisProps } from '../../type';
-
 import { getLineHeight } from '../../utils/compute';
 import { getElementHeight, wrapTextChildNodesWithSpan } from '../../utils/dom';
 
@@ -161,7 +160,7 @@ function JsEllipsis(props: JsEllipsisProps) {
     }
   }
   // Call truncate function to reflow when the main props change.
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (ref.current) {
       lineHeightRef.current = getLineHeight(ref.current);
     }
@@ -169,7 +168,7 @@ function JsEllipsis(props: JsEllipsisProps) {
   }, [reflow]);
 
   // Observe resize event of container if reflowOnResize is true.
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     const dom = ref.current;
     if (dom && reflowOnResize) {
       if (!observerRef.current && ellipsis) {
