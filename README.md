@@ -2,18 +2,36 @@
 
 A high performance and customized ellipsis component for react. Support to custom ellipsis char, custom ellipsis node, end char filter, rich text, ...etc.
 
-Searching for Vue? Refer to [vue-ellipsis-component](https://github.com/ruofee/vue-ellipsis-component).
+Searching for a Vue library? Refer to [vue-ellipsis-component](https://github.com/ruofee/vue-ellipsis-component).
 
 ![](https://img.shields.io/npm/v/react-ellipsis-component.svg) ![](https://img.shields.io/npm/dt/react-ellipsis-component.svg) ![](https://img.shields.io/badge/language-javascript-yellow.svg)
 
-## Docs
-
-- [English Docs](https://react-ellipsis.quincychen.cn/)
-- [中文文档](https://react-ellipsis.quincychen.cn/zh/)
-
-## Demo
-
 ![demo](https://static.quincychen.cn/demo.gif)
+
+## API Referrer
+
+### Props
+
+| Prop Name               | Type      | Default  | Description                                                  |
+| ----------------------- | --------- | -------- | ------------------------------------------------------------ |
+| text                    | String    | Required | Pure text that you want to ellipsis. Support \n to wrap with useJsEllipsis={true}. |
+| maxLine                 | Number    | 1        | Content will be truncated if the line count of content is bigger than `maxLine`. |
+| maxHeight               | Number    |          | Content will be truncated if the height of content is bigger than `maxHeight`. Priority higher than maxLine. |
+| className               | String    |          | Add className to component.                                  |
+| ellipsis                | Boolean   | true     | Whether to ellipsis the text content.                        |
+| ellipsisNode            | ReactNode | …        | Custom the ellipsis node.                                    |
+| endExcludes             | String[]  | []       | The characters that want to remove at the end(Before ellipsis char). |
+| dangerouslyUseInnerHTML | Boolean   | false    | Parse text as html(Make sure the text that you pass is safe, or you may been attacked by XSS). |
+| reflowOnResize          | Boolean   |          | Whether update when container resize. Default true if native ellipsis support, otherwise false. |
+| visibleLine             | Number    | maxLine  | Line count of visible content(Can't bigger than maxLine).    |
+| visibleHeight           | Number    |          | Visible height of content. Priority higher than `visibleLine`. |
+
+### Events
+
+| Event Name      | Type                                      | Description                                                  |
+| --------------- | ----------------------------------------- | ------------------------------------------------------------ |
+| onReflow        | (ellipsis: Boolean, text: String) => void | Reflow callback, `ellipsis` is whether the text have been truncated. `text` is the visible content after truncating(Not include ellipsis char). |
+| onEllipsisClick | () => void                                | Ellipsis click callback.                                     |
 
 ## Buy Me A Coffee
 
@@ -31,8 +49,7 @@ Open source is not easy, you can buy me a coffee. _Note your name or github id s
 		</td>
 	</tr>
 </table>
-
-## Donation List
+### Donation List
 
 ❤️ Thanks these guys for donations. Contact me with <a href="mailto:mail@quincychen.cn" target="_blank" rel="noopener noreferrer nofollow" title="EMail">email</a>, if you had donated but not on the list.
 

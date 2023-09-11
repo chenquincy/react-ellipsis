@@ -8,7 +8,7 @@ export const isBrowser = typeof window !== 'undefined' && typeof document !== 'u
 
 /** Whether the environment support -webkit-line-clamp. */
 export const isSupportNativeEllipsis =
-  isBrowser && typeof document.body.style.webkitLineClamp !== 'undefined';
+  isBrowser && typeof document.body?.style?.webkitLineClamp !== 'undefined';
 
 /** Whether the environment support window.requestAnimationFrame. */
 export const isSupportRequestAnimationFrame =
