@@ -13,7 +13,7 @@ Searching for a Vue library? Refer to [vue-ellipsis-component](https://github.co
 
 ## Demo
 
-![demo](https://static.quincychen.cn/demo.gif)
+![demo](./images/demo.gif)
 
 ## API Referrer
 
