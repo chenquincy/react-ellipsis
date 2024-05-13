@@ -9,16 +9,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout # 1. 将仓库内master分支的内容下载到工作目录
+        uses: actions/checkout@v2
       - name: use Node.js 12.16.2
         uses: actions/setup-node@master
         with:
           node-version: 12.16.2
       - name: update docs
         run: |
-          npm install
+          yarn
           cd docs
-          npm install
-          npm run build
+          yarn
+          yarn build
         env:
           CI: true
       - name: deploy docs
