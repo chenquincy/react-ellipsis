@@ -95,11 +95,14 @@ which will lead to compute maxLine error.
 
 ## show n lines when more than m lines
 
+show all content lines if the count of content line small than `maxLine`, or show `visibleLine` line of content.
+
 <Playground>
   <Ellipsis
     text="A high performance and customized ellipsis component for react. Support to custom ellipsis char, ellipsis html, end char filter, reflow callback, ...etc."
     maxLine="2"
     visibleLine="1"
+    reflowOnResize={true}
   />
 </Playground>
 
