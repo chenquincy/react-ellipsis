@@ -141,7 +141,7 @@ function JsEllipsis(props: JsEllipsisProps) {
         truncateHTML(container, node, max);
       }
     } else {
-      const nodes = [].slice.call(children);
+      const nodes = [].slice.call(children) as Node[];
       textContainer.innerHTML = '';
       let i = 0;
       // find the critical node
@@ -149,6 +149,12 @@ function JsEllipsis(props: JsEllipsisProps) {
         textContainer.appendChild(nodes[i]);
         const { height } = container.getBoundingClientRect();
         if (height > max) {
+          // When the last node is not a text node and has no child nodes, return directly.
+          // More details: https://github.com/chenquincy/react-ellipsis/issues/24
+          if (nodes[i].childNodes.length === 0 && nodes[i].nodeType !== Node.TEXT_NODE) {
+            textContainer.removeChild(nodes[i]);
+            return;
+          }
           break;
         }
         i++;
