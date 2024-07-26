@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { cloneElement, useCallback, useRef } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import useIsomorphicLayoutEffect from '../../hooks';
 import { JsEllipsisProps } from '../../type';
@@ -146,15 +146,20 @@ function JsEllipsis(props: JsEllipsisProps) {
       let i = 0;
       // find the critical node
       while (i < nodes.length) {
+        const _node = nodes[i].cloneNode();
+        _node.childNodes.forEach(_node.removeChild);
+        textContainer.appendChild(_node);
+        if (container.getBoundingClientRect().height > max) {
+          // When the last node is not a text node and has no child nodes, return directly.
+          // More details: https://github.com/chenquincy/react-ellipsis/issues/24
+          textContainer.removeChild(_node);
+          handleOnReflow(true, textContainer.innerHTML);
+          return;
+        }
+        textContainer.removeChild(_node);
         textContainer.appendChild(nodes[i]);
         const { height } = container.getBoundingClientRect();
         if (height > max) {
-          // When the last node is not a text node and has no child nodes, return directly.
-          // More details: https://github.com/chenquincy/react-ellipsis/issues/24
-          if (nodes[i].childNodes.length === 0 && nodes[i].nodeType !== Node.TEXT_NODE) {
-            textContainer.removeChild(nodes[i]);
-            return;
-          }
           break;
         }
         i++;
