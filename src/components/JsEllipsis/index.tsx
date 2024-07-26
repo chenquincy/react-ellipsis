@@ -1,4 +1,4 @@
-import React, { cloneElement, useCallback, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import ResizeObserver from 'resize-observer-polyfill';
 import useIsomorphicLayoutEffect from '../../hooks';
 import { JsEllipsisProps } from '../../type';
@@ -102,7 +102,7 @@ function JsEllipsis(props: JsEllipsisProps) {
       }
       const temp = text.slice(l, m);
       textContainer.innerText = currentText + temp;
-      const { height } = container.getBoundingClientRect();
+      const height = container.clientHeight;
       if (height > max) {
         r = m;
       } else {
@@ -129,7 +129,7 @@ function JsEllipsis(props: JsEllipsisProps) {
         const html = node.innerHTML;
         // clear content to determine whether the empty node can be placed.
         node.innerHTML = '';
-        const { height } = container.getBoundingClientRect();
+        const height = container.clientHeight;
         if (height > max) {
           // return after remove the node, if overflow with empty node.
           textContainer.removeChild(node);
@@ -149,7 +149,7 @@ function JsEllipsis(props: JsEllipsisProps) {
         const _node = nodes[i].cloneNode();
         _node.childNodes.forEach(_node.removeChild);
         textContainer.appendChild(_node);
-        if (container.getBoundingClientRect().height > max) {
+        if (container.clientHeight > max) {
           // When the last node is not a text node and has no child nodes, return directly.
           // More details: https://github.com/chenquincy/react-ellipsis/issues/24
           textContainer.removeChild(_node);
@@ -158,7 +158,7 @@ function JsEllipsis(props: JsEllipsisProps) {
         }
         textContainer.removeChild(_node);
         textContainer.appendChild(nodes[i]);
-        const { height } = container.getBoundingClientRect();
+        const height = container.clientHeight;
         if (height > max) {
           break;
         }

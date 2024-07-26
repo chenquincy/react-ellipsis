@@ -43,5 +43,5 @@ export function getLineHeight(element: HTMLElement) {
     // Compatible some browser
     return height * 1.1;
   }
-  return parseInt(lineHeight);
+  return parseFloat(lineHeight);
 }
