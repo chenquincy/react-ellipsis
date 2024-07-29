@@ -146,12 +146,11 @@ function JsEllipsis(props: JsEllipsisProps) {
       let i = 0;
       // find the critical node
       while (i < nodes.length) {
+        // clone the empty node to determine whether the empty node can be placed.
         const _node = nodes[i].cloneNode();
-        _node.childNodes.forEach(_node.removeChild);
         textContainer.appendChild(_node);
         if (container.clientHeight > max) {
-          // When the last node is not a text node and has no child nodes, return directly.
-          // More details: https://github.com/chenquincy/react-ellipsis/issues/24
+          // return after remove the node, if overflow with empty node.
           textContainer.removeChild(_node);
           handleOnReflow(true, textContainer.innerHTML);
           return;
