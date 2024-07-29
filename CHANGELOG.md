@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.11](https://github.com/chenquincy/react-ellipsis/compare/v1.1.4...v1.1.11) (2024-07-29)
+
+
+### Bug Fixes
+
+* reflowOnResize not work when toggle ellipsis repeatedly ([16511fb](https://github.com/chenquincy/react-ellipsis/commit/16511fb21dfe80e849e95481fdfd02a5f9a472eb)), closes [#17](https://github.com/chenquincy/react-ellipsis/issues/17)
+* remove useless code; correct the comment ([93a5758](https://github.com/chenquincy/react-ellipsis/commit/93a5758c6c8d4fb863e1d1466c88a8bd4afe9723))
+* resizeOnReflow not work with multi ellipsis components ([e4a5290](https://github.com/chenquincy/react-ellipsis/commit/e4a5290ff93e5ffdfb185a823904801d81cbeced)), closes [#16](https://github.com/chenquincy/react-ellipsis/issues/16)
+* resolve issue with abnormal scaling caused by zoom, and floating point line-height values ([cbc6325](https://github.com/chenquincy/react-ellipsis/commit/cbc6325b26d1bc8678bdb720599920fcc209ebee))
+* resolve truncation issue when the last node is a <br> tag in rich text mode ([cca7d1e](https://github.com/chenquincy/react-ellipsis/commit/cca7d1e296744863880cc794c38d16581fd26eb2))
+* resolve truncation issue when the last node is a <br> tag in rich text mode ([61c4d62](https://github.com/chenquincy/react-ellipsis/commit/61c4d626cadb90a9dd5d18e9029e5b298fa47469))
+* **docs:** rich text styles not work and docs desc ([90bc143](https://github.com/chenquincy/react-ellipsis/commit/90bc1431f8bf0a39166b893f5e9edb3a784a1493))
+* type error ([78db293](https://github.com/chenquincy/react-ellipsis/commit/78db293bb6179fe77a211d90aabb02d13ae748b4))
+* warning when use on server render ([77132e0](https://github.com/chenquincy/react-ellipsis/commit/77132e0bdf950c7ead2f91d7b9fa853b0720f6a6))
+
 ### [1.1.10](https://github.com/chenquincy/react-ellipsis/compare/v1.1.9...v1.1.10) (2022-07-10)
 
 
